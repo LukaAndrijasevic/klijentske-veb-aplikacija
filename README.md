@@ -1,4 +1,4 @@
-#Klijentske veb aplikacije 
+Klijentske veb aplikacije 
 
 Izvorni kod za vezbi iz predmeta
-KVA na Univerzitetu Singidunum.
+Klijentske veb aplikacijena Univerzitetu Singidunum.
