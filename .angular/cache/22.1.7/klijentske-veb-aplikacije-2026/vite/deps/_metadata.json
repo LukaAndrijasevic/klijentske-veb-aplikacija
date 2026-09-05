@@ -1,31 +1,31 @@
 {
-  "hash": "af95a292",
-  "configHash": "3fc2860d",
+  "hash": "64b7b50c",
+  "configHash": "7a9bc775",
   "lockfileHash": "d02b5f98",
-  "browserHash": "aaffc8fe",
+  "browserHash": "c984871e",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "00f11fbc",
+      "fileHash": "6a010148",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "5e6399fd",
+      "fileHash": "a8a8280d",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "415cd955",
+      "fileHash": "c8b5ff30",
       "needsInterop": false
     },
     "axios": {
       "src": "../../../../../../node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "f60dc783",
+      "fileHash": "fa1c9788",
       "needsInterop": false
     }
   },

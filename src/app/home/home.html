@@ -1,4 +1,5 @@
 <ul>
+    @if(flights().length > 0){
     @for (f of flights(); track $index){
     <li>
         <h3>{{f.destination}}</h3>
@@ -8,5 +9,10 @@
             <li>Vreme: <strong>{{f.scheduledAt}}</strong></li>
         </ul>
     </li>
+        }
+    }
+    @else {
+        <h3>Podaci se ucitavaju</h3>
+        <p>Molimo sacekajte...</p>
     }
 </ul>
