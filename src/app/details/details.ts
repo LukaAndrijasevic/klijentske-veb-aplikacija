@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,8 +8,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './details.css',
 })
 export class Details {
+  id = signal(null)
+
   constructor(route: ActivatedRoute) {
-    route.params.subscribe(params=>console.log(params['id']))
+    route.params.subscribe(params=>this.id.set(params['id']))
   }
 }
  
