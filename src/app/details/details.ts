@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-details',
-  styleUrl: './details.css',
+  imports: [],
   templateUrl: './details.html',
+  styleUrl: './details.css',
 })
-export class Details {}
+export class Details {
+  constructor(route: ActivatedRoute) {
+    route.params.subscribe(params=>console.log(params['id']))
+  }
+}
+ 
