@@ -9,8 +9,8 @@ import { MatToolbarModule }                 from '@angular/material/toolbar';
   imports: [
             RouterOutlet,
             RouterLinkWithHref,
-            MatButtonModule,
             MatMenuModule,
+            MatButtonModule,
             MatToolbarModule
           ],
   templateUrl: './app.html',
