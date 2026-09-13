@@ -1,6 +1,24 @@
 <h1>Home</h1>
 
     @if(flights().length > 0) {
+    <div class = "card-wrapper">
+        @for (f of flights(); track $index){
+            <mat-card class="flight-card" appearance="outlined">
+                <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" 
+                alt="Photo of a Shiba Inu" [alt]="f.destination">
+        
+            <mat-card-content>
+                <h3>{{f.destination}}</h3>
+                <p> {{f.scheduledAt}}</p>
+            </mat-card-content>
+    
+                <mat-card-actions>
+                    <a [routerLink]="`/details/${f.id}`" matButton>Details</a>
+                </mat-card-actions>
+            </mat-card>
+        }
+    </div>
+    
     <ul>
         @for (f of flights(); track $index){
             <li>

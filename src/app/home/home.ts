@@ -1,14 +1,16 @@
-import { Component, signal }  from '@angular/core';
-import { FlightModel }        from '../../models/flight.model';
-import { RouterLink }         from "@angular/router";
+import { Component, signal }   from '@angular/core';
+import { FlightModel }         from '../../models/flight.model';
+import { RouterLink }          from "@angular/router";
+import { MatButtonModule}      from '@angular/material/button';
+import { MatCardModule}        from '@angular/material/card';
 
 import axios from 'axios';
 
 @Component({
-  imports: [RouterLink],
-  selector: 'app-home',
-  templateUrl: './home.html',
-  styleUrl: './home.css',
+  imports: [RouterLink , MatButtonModule , MatCardModule],
+  selector:     'app-home',
+  templateUrl:  './home.html',
+  styleUrl:     './home.css',
 })
 export class Home {
   flights = signal<FlightModel[]>([])

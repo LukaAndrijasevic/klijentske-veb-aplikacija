@@ -1,5 +1,8 @@
 import { Component, signal }  from '@angular/core';
 import { ActivatedRoute }     from '@angular/router';
+import { FlightModel }        from '../models/flights.model';
+
+import axios from 'axios';
 
 @Component({
   imports:        [],
@@ -7,10 +10,15 @@ import { ActivatedRoute }     from '@angular/router';
   templateUrl:    './details.html',
   styleUrl:       './details.css',
 })
+
 export class Details {
-  id = signal(null)
+  flight = signal<FlightModel | null>(null)
 
   constructor(route: ActivatedRoute) {
-    route.params.subscribe(params=>this.id.set(params['id']))
+    route.params.subscribe(params=>{
+      const id = params['id']
+      axios.get(`https://flight.pequla.com/api/flight/${id}`)
+      .then(rsp => this.flight.set(rsp.data))
+    })
   }
 }
