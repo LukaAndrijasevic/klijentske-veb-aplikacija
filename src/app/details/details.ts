@@ -2,10 +2,10 @@ import { Component, signal }  from '@angular/core';
 import { ActivatedRoute }     from '@angular/router';
 
 @Component({
-  imports: [],
+  imports:        [],
   selector:       'app-details',
-  templateUrl:  './details.html',
-  styleUrl:     './details.css',
+  templateUrl:    './details.html',
+  styleUrl:       './details.css',
 })
 export class Details {
   id = signal(null)

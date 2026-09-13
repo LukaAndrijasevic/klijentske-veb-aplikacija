@@ -1,6 +1,6 @@
 <h1>Home</h1>
 
-    @if(flights().length > 0) { // uslov 
+    @if(flights().length > 0) {
     <ul>
         @for (f of flights(); track $index){
             <li>
@@ -8,7 +8,7 @@
                     <ul>
                         <li>ID:         <strong>{{f.id}}            </strong></li>
                         <li>Broj Leta:  <strong>{{f.flightNumber}}  </strong></li>
-                        <li>Vreme:       <strong>{{f.scheduledAt}}  </strong></li>
+                        <li>Vreme:      <strong>{{f.scheduledAt}}   </strong></li>
                         <li><a [routerLink]="`/details/${f.id}`">Detalji</a></li>
                     </ul>
             </li>
