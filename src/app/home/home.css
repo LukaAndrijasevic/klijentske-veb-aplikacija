@@ -8,3 +8,7 @@
     flex-wrap: wrap;
     gap: 5px;
 }
+
+.card-content {
+    margin-top: 10px;
+}
