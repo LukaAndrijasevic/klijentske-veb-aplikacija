@@ -1,4 +1,4 @@
-@if(flights().length > 0) {
+@if(flights().length == 0) {
     <div class="card-wrapper">
         @for (f of flights(); track $index){
     
@@ -40,8 +40,13 @@
 }
 
     @else {
-        <h3>Podaci se ucitavaju</h3>
-        <p>Molimo sacekajte...</p>
+        <mat-card class="loading-card">
+            <img src="/loading.gif" class="loading-img">
+            <mat-card-content>
+                <h3>Podaci se ucitavaju</h3>
+                <p>Molimo sacekajte...</p>
+            </mat-card-content>
+        </mat-card>
     }
 
     
