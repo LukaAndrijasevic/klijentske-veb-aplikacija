@@ -1,14 +1,17 @@
-import { Component, signal }  from '@angular/core';
-import { ActivatedRoute }     from '@angular/router';
-import { FlightModel }        from '../models/flights.model';
-import { Utils }              from '../utils';
-import { MatCardModule }      from '@angular/material/card';
+import { Component, signal }                from '@angular/core';
+import { ActivatedRoute }                   from '@angular/router';
+import { FlightModel }                      from '../models/flights.model';
+import { Utils }                            from '../utils';
+import { MatCardModule }                    from '@angular/material/card';
+import {MatListModule}                      from '@angular/material/list';
 import { DomSanitizer, SafeResourceUrl }    from '@angular/platform-browser';
+
 import axios from 'axios';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
-  imports:        [MatCardModule],
+  imports:        [MatCardModule , MatListModule, MatIconModule],
   selector:       'app-details',
   templateUrl:    './details.html',
   styleUrl:       './details.css',
