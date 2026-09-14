@@ -1,30 +1,40 @@
-import { Component, signal }                from '@angular/core';
-import { ActivatedRoute }                   from '@angular/router';
-import { FlightModel }                      from '../models/flights.model';
-import { Utils }                            from '../utils';
-import { MatCardModule }                    from '@angular/material/card';
-import {MatListModule}                      from '@angular/material/list';
-import { DomSanitizer, SafeResourceUrl }    from '@angular/platform-browser';
-
-import axios from 'axios';
-import { MatIconModule } from '@angular/material/icon';
-
+import { Component, signal }              from '@angular/core';
+import { ActivatedRoute, RouterLink }     from '@angular/router';
+import { FlightModel }                    from '../../models/flight.model';
+import { Utils }                          from '../utils';
+import { MatCardModule }                  from '@angular/material/card';
+import { DomSanitizer, SafeResourceUrl }  from '@angular/platform-browser';
+import { MatListModule }                  from '@angular/material/list';
+import { MatIconModule }                  from '@angular/material/icon';
+import { AuthService }                    from '../services/auth.service';
+import { MatButtonModule }                from '@angular/material/button';
+import { FlightService }                  from '../services/flight.service';
+import { Loading }                        from '../loading/loading';
 
 @Component({
-  imports:        [MatCardModule , MatListModule, MatIconModule],
-  selector:       'app-details',
-  templateUrl:    './details.html',
-  styleUrl:       './details.css',
+  
+  imports:  [
+            MatCardModule,
+            MatListModule,
+            MatIconModule,
+            RouterLink,
+            MatButtonModule,
+            Loading
+            ],
+  selector:     'app-details',
+  templateUrl:  './details.html',
+  styleUrl:     './details.css',
 })
 
 export class Details {
+  public authService = AuthService
   flight = signal<FlightModel | null>(null)
 
-  constructor(route: ActivatedRoute , public utils: Utils , private sanitizer: DomSanitizer) {
-    route.params.subscribe(params=>{
+  constructor(route: ActivatedRoute, public utils: Utils, private sanitizer: DomSanitizer) {
+    route.params.subscribe(params => {
       const id = params['id']
-      axios.get(`https://flight.pequla.com/api/flight/${id}`)
-      .then(rsp => this.flight.set(rsp.data))
+      FlightService.getFlightById(id)
+        .then(rsp => this.flight.set(rsp.data))
     })
   }
 

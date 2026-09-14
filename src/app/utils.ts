@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { FlightModel } from '../models/flight.model';
+import { Injectable }   from '@angular/core';
+import { FlightModel }  from '../models/flight.model';
 
 @Injectable({
   providedIn: 'root',
 })
-
 export class Utils {
   formatDate(iso: string) {
     return new Date(iso).toLocaleString('sr-RS', {
