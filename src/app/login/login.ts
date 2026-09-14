@@ -6,6 +6,7 @@ import { MatIconModule }    from '@angular/material/icon';
 import { MatInputModule }   from '@angular/material/input';
 import { AuthService }      from '../services/auth.service';
 import { Router }           from '@angular/router';
+import { Alerts }           from '../alert';
 
 @Component({
   imports:  [
@@ -36,6 +37,6 @@ export class Login {
       return
     }
 
-    alert('Invalid email or password!')
+    Alerts.error('Invalid email or password!')
   }
 }
