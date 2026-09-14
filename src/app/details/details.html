@@ -1,9 +1,29 @@
 @if(flight()) {
-    <ul>
-        <li>ID:             {{flight()?.id}}            </li>
-        <li>Destination:    {{flight()?.destination}}   </li>
-        <li>Scheduled At:   {{flight()?.scheduledAt}}   </li>
-        <li>Plane Model:    {{flight()?.plane}}         </li>
-        <li>Terminal:       {{flight()?.id}}            </li>
-    </ul>
+    <div class="details-wrapper">
+        <mat-card class="details-card">
+            <mat-card-content>
+                <img [src]="utils.getImageUrl(flight()!)" class="details-image">
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="details-card">
+            <mat-card-content>
+                <ul>
+                    <li>ID:             {{flight()?.id}}            </li>
+                    <li>Destination:    {{flight()?.destination}}   </li>
+                    <li>Scheduled At:   {{flight()?.scheduledAt}}   </li>
+                    <li>Plane Model:    {{flight()?.plane}}         </li>
+                    <li>Terminal:       {{flight()?.id}}            </li>
+                </ul>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card>
+            <mat-card-content>
+                    <iframe width="100%" height="400" style="border:0" loading="lazy" allowfullscreen
+                        [src]="getMapUrl(flight()!.destination)">
+                    </iframe>
+            </mat-card-content>
+        </mat-card>
+    </div>
 }

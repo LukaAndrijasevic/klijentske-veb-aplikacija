@@ -1,0 +1,14 @@
+.details-wrapper {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.details-card {
+    width: 45%;
+}
+
+.details-image{
+    max-width: 100%;
+}
