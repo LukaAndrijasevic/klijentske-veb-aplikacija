@@ -10,6 +10,9 @@ import { MatSelectModule }    from '@angular/material/select';
 import { FlightService }      from '../services/flight.service';
 import { Loading }            from '../loading/loading';
 
+import Swal                   from 'sweetalert2';
+import { Alerts } from '../alert';
+
 @Component({
   imports: [
             MatCardModule,
@@ -24,7 +27,6 @@ import { Loading }            from '../loading/loading';
   templateUrl:  './user.html',
   styleUrl:     './user.css',
 })
-
 export class User {
   public activeUser = AuthService.getActiveUser()
   destinations = signal<string[]>([])
@@ -41,6 +43,6 @@ export class User {
 
   updateUser() {
     AuthService.updateActiveUser(this.activeUser!)
-    alert('User updated successfully')
+        Alerts.success("User update succesfully")
   }
 }
