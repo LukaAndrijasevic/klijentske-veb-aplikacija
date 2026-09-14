@@ -6,7 +6,7 @@ import { MatIconModule }    from '@angular/material/icon';
 import { MatInputModule }   from '@angular/material/input';
 import { AuthService }      from '../services/auth.service';
 import { Router }           from '@angular/router';
-import { Alerts }           from '../alert';
+import { Alerts }           from '../alerts';
 
 @Component({
   imports:  [

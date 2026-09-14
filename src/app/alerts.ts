@@ -17,4 +17,20 @@ export class Alerts {
             icon: 'error'
         })
     }
+
+    static confirm(text: string, callback: Function) {
+        Swal.fire({
+            title: "Are you sure?",
+            text,
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                callback()
+            }
+        })
+    }
 }
