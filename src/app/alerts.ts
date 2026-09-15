@@ -1,12 +1,22 @@
 import Swal from "sweetalert2"
 
+const matCustomClass = {
+    popup: 'mat-swal-popup',
+    title: 'mat-swal-title',
+    actions: 'mat-swal-actions',
+    confirmButton: 'mat-swal-confirm',
+    cancelButton: 'mat-swal-cancel'
+
+}
+
 export class Alerts {
     
     static success(text: string) {
         Swal.fire({
             title:'Success',
             text,
-            icon: 'success'
+            icon: 'success',
+            customClass: matCustomClass
         });
     }
 
@@ -14,7 +24,8 @@ export class Alerts {
         Swal.fire({
             title: 'Error',
             text,
-            icon: 'error'
+            icon: 'error',
+            customClass: matCustomClass
         })
     }
 
@@ -23,6 +34,7 @@ export class Alerts {
             title: "Are you sure?",
             text,
             icon: "question",
+            customClass: matCustomClass,
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
